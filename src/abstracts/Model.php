@@ -1,8 +1,8 @@
 <?php namespace Phailgorithm\PhactoryLib;
 
-use Model\Cache;
+use Phailgorithm\PhactoryLib\Model\Cache;
 use Illuminate\Support\Collection;
-use \Illuminate\Contracts\Support\Arrayable;
+use Illuminate\Contracts\Support\Arrayable;
 
 abstract class Model implements Arrayable {
 
