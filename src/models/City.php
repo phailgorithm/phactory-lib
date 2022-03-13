@@ -1,4 +1,4 @@
-<?php namespace Project;
+<?php namespace Phailgorithm\PhactoryLib\Model;
 
 use Model;
 
