@@ -1,6 +1,6 @@
 <?php namespace Phailgorithm\PhactoryLib\Model;
 
-use Phailgorithm\PhactoryLib\Exception\Model;
+use Phailgorithm\PhactoryLib\Model;
 use Localcache;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Arrayable;
