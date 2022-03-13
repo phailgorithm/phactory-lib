@@ -76,7 +76,7 @@ return function() : Router {
     }
 
     $notFound = [
-        'namespace' => 'Core',
+        'namespace' => 'Phailgorithm\\PhactoryLib',
         'controller' => 'Error',
         'action' => 'check'
     ];

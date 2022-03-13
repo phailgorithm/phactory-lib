@@ -1,11 +1,5 @@
 <?php
 
-if (isset($_GET['domain']) && isset($_ENV['ENABLE_COOKIE_DOMAIN'])) {
-    setcookie('domain', $_GET['domain']);
-    header('Location: /');
-    die;
-}
-
 if ( ! (php_sapi_name() == 'cli' && isset($_ENV['PROJECT_CODE']))) {
 
     $config = sprintf('%s/%s.json',
@@ -13,7 +7,7 @@ if ( ! (php_sapi_name() == 'cli' && isset($_ENV['PROJECT_CODE']))) {
         di()->getHttphost()
     );
     if (!file_exists($config)) {
-        throw new Core\Exception\NotFound("Preconfig not found: ${config}");
+        throw new Exception("Preconfig not found: ${config}");
     }
 
     # Loads json config data based on domain name as env variables

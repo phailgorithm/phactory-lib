@@ -2,14 +2,14 @@
 
 use Phalcon\Mvc\Application;
 
-include('/php/vendor/autoload.php');
+include(APP_PATH.'/phalcon/vendor/autoload.php');
 
 $timings = array();
 
 $timings['sys-init'][] = microtime(true);
 $di = new Phalcon\Di\FactoryDefault;
 foreach (['app'] as $filename) {
-    $di->setShared($filename, require_once(APP_PATH. '/di/'.$filename.'.php'));
+    $di->setShared($filename, require_once(PHACTORY_PATH. '/di/'.$filename.'.php'));
 }
 $timings['sys-init'][] = microtime(true);
 
@@ -47,7 +47,7 @@ $postEnv = array (
 
 foreach ($preEnv as $filename) {
     $timings['pre-di-'. $filename ][] = microtime(true);
-    $di->setShared($filename, require_once(APP_PATH. '/di/'.$filename.'.php'));
+    $di->setShared($filename, require_once(PHACTORY_PATH. '/di/'.$filename.'.php'));
     $timings['pre-di-'. $filename ][] = microtime(true);
 }
 
@@ -58,7 +58,7 @@ $localEnvs = [
     'PROJECT' => '.env',
     'DOMAIN'  => sprintf('.env.%s', $di->getDomain())
 ];
-$dir = sprintf('%s/%s/', PHACTORY_PATH, $di->getProject());
+$dir = sprintf('%s/', APP_PATH);
 foreach ($localEnvs as $k => $file) {
     if (!file_exists($dir.$file)) {
         trigger_error("Missing local .env: ${dir}/${file}", E_USER_WARNING);
@@ -98,18 +98,18 @@ if (isset($_ENV['SENTRY_DSN_BACKEND']) || isset($_ENV['PROJECT_SENTRY_DSN_BACKEN
 $timings['post-sentry'][] = microtime(true);
 
 
-# Project-specific autoload
+// # Project-specific autoload
 
-## Autoload
-$localautoload = sprintf('%s/%s/phalcon/vendor/autoload.php', PHACTORY_PATH, $di->getProject());
-if (file_exists($localautoload)) {
-    include($localautoload);
-}
+// ## Autoload
+// $localautoload = sprintf('%s/%s/phalcon/vendor/autoload.php', APP_PATH, $di->getProject());
+// if (file_exists($localautoload)) {
+//     include($localautoload);
+// }
 
 
 foreach ($postEnv as $filename) {
     $timings['post-di-'. $filename][] = microtime(true);
-    $di->setShared($filename, require_once(APP_PATH. '/di/'.$filename.'.php'));
+    $di->setShared($filename, require_once(PHACTORY_PATH. '/di/'.$filename.'.php'));
     $timings['post-di-'. $filename][] = microtime(true);
 }
 
@@ -118,18 +118,18 @@ Monolog\ErrorHandler::register(di()->getLog());
 
 
 ## Bootstraps
-$localBootstrap = sprintf('%s/%s/phalcon/bootstrap.php', PHACTORY_PATH, $di->getProject());
+$localBootstrap = sprintf('%s/phalcon/bootstrap.php', APP_PATH);
 if (file_exists($localBootstrap)) {
     include($localBootstrap);
 }
 
 ## Dependecy injections
-$localDis = sprintf('%s/%s/phalcon/local-di.php', PHACTORY_PATH, $di->getProject());
+$localDis = sprintf('%s/phalcon/local-di.php', APP_PATH);
 $localDis = file_exists($localDis) ? include($localDis) : [];
 
 foreach ($localDis as $filename) {
     $timings['local-di-'. $filename ][] = microtime(true);
-    di()->setShared($filename, require_once(APP_PATH. '/di/'.$filename.'.php'));
+    di()->setShared($filename, require_once(APP_PATH. '/phalcon/di/'.$filename.'.php'));
     $timings['local-di-'. $filename ][] = microtime(true);
 }
 

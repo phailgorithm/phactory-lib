@@ -11,14 +11,17 @@
     ],
     "type": "project",
     "require": {
-		"php": ">=7.1"
+        "php": ">=7.1"
     },
     "require-dev": {
-		"phpunit/phpunit": "6.*"
+        "phpunit/phpunit": "6.*"
     },
     "autoload": {
         "psr-4": {
             "Phailgorithm\\PhactoryLib\\": "src/"
-        }
+        },
+        "files": [
+            "src/library/helpers.php"
+        ]
     }
 }

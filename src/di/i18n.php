@@ -136,7 +136,7 @@ return function ($yml = null, array $data = array()) : Phalcon\Config {
         foreach ($langs as $l) {
             foreach ([
                 sprintf('/base/locale/%s.yml', $l ),
-                $this->has('project') ? sprintf('%s/%s/locale/%s.yml', PHACTORY_PATH,  $this->getProject() , $l ) : null
+                $this->has('project') ? sprintf('%s/locale/%s.yml', PROJECT_PATH , $l ) : null
             ] as $p) {
                 if (!!$p && file_exists($p)) {
                     $return->merge( new Yaml( $p ,[

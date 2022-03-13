@@ -11,11 +11,11 @@ else {
 
     set_exception_handler(function(...$args) {
 
-        if ($args[0] instanceOf Core\Exception\NotFound) {
-            if (class_exists(sprintf('%s\\Core\\ErrorController', di()->getProject()))) {
+        if ($args[0] instanceOf Phailgorithm\PhactoryLib\Core\Exception\NotFound) {
+            if (class_exists(sprintf('%s\\Phailgorithm\\PhactoryLib\\Core\\ErrorController', di()->getProject()))) {
                 di()->getDispatcher()->setNameSpaceName( sprintf('%s\\Core', di()->getProject()) );
             } else {
-                di()->getDispatcher()->setNameSpaceName( 'Core' );
+                di()->getDispatcher()->setNameSpaceName( 'Phailgorithm\\PhactoryLib\\Core' );
             }
             di()->getDispatcher()->setControllerName( 'Error');
             di()->getDispatcher()->setActionName('http404' );
@@ -28,11 +28,11 @@ else {
             ]);
 
         } else if ($args[0] instanceof Throwable) {
-
-            if (class_exists(sprintf('%s\\Core\\ErrorController', di()->getProject()))) {
-                di()->getDispatcher()->setNameSpaceName( sprintf('%s\\Core', di()->getProject()) );
+d($args);
+            if (class_exists(sprintf('%s\\Phailgorithm\\PhactoryLib\\Core\\ErrorController', di()->getProject()))) {
+                di()->getDispatcher()->setNameSpaceName( sprintf('%s\\Phailgorithm\\PhactoryLib\\Core', di()->getProject()) );
             } else {
-                di()->getDispatcher()->setNameSpaceName( 'Core' );
+                di()->getDispatcher()->setNameSpaceName( 'Phailgorithm\\PhactoryLib\\Core' );
             }
 
             di()->getDispatcher()->setControllerName( 'Error');

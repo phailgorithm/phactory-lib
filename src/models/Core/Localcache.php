@@ -1,4 +1,4 @@
-<?php namespace Core;
+<?php namespace Phailgorithm\PhactoryLib\Core;
 
 class Localcache extends Cache {
 

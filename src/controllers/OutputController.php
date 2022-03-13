@@ -1,4 +1,4 @@
-<?php namespace Phailgorithm\PhactoryLib\Core;
+<?php namespace Phailgorithm\PhactoryLib;
 
 use Timing;
 
