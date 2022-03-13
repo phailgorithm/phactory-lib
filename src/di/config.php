@@ -57,10 +57,10 @@ return function () : Config {
 
 
     $confs = [
-        sprintf('%s/%s/config/app.yml', PHACTORY_PATH, $this->getProject()),
-        sprintf('%s/%s/config/%s.yml', PHACTORY_PATH, $this->getProject(), ENV),
-        sprintf('%s/%s/config/%s/app.yml', PHACTORY_PATH, $this->getProject(), $this->getDomain()),
-        sprintf('%s/%s/config/%s/%s.yml', PHACTORY_PATH, $this->getProject(), $this->getDomain(), ENV),
+        sprintf('%s/config/app.yml', APP_PATH),
+        sprintf('%s/config/%s.yml', APP_PATH, ENV),
+        sprintf('%s/config/%s/app.yml', APP_PATH, $this->getDomain()),
+        sprintf('%s/config/%s/%s.yml', APP_PATH, $this->getDomain(), ENV),
     ];
 
     foreach ($confs as $conf) {

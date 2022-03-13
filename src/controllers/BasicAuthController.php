@@ -1,6 +1,6 @@
 <?php namespace Phailgorithm\PhactoryLib\Controller;
 
-class BasicAuthController extends \Phailgorithm\PhactoryLib\Core\OutputController {
+class BasicAuthController extends OutputController {
 
     protected static function getAuthUser() : string { return di()->getProject(); }
     protected static function getProtectedEnvs() : array { return ['staging']; }

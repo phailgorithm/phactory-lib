@@ -14,13 +14,13 @@ return function() : Router {
         '/base/config/routes.yml',
 
         # PROJECT
-        sprintf('%s/%s/config/routes.yml', PHACTORY_PATH, $this->getProject()),
+        sprintf('%s/config/routes.yml', APP_PATH),
 
         # PROJECT - DOMAIN
-        sprintf('%s/%s/config/%s/routes.yml', PHACTORY_PATH, $this->getProject(), $this->getDomain()),
+        sprintf('%s/config/%s/routes.yml', APP_PATH, $this->getDomain()),
 
         # PROJECT - DOMAIN - ENV
-        sprintf('%s/%s/config/%s/routes.%s.yml', PHACTORY_PATH, $this->getProject(), $this->getDomain(), ENV),
+        sprintf('%s/config/%s/routes.%s.yml', APP_PATH, $this->getDomain(), ENV),
 
     ];
 
@@ -76,7 +76,7 @@ return function() : Router {
     }
 
     $notFound = [
-        'namespace' => 'Phailgorithm\\PhactoryLib',
+        'namespace' => 'Phailgorithm\\PhactoryLib\\Controller',
         'controller' => 'Error',
         'action' => 'check'
     ];
