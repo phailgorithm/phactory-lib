@@ -1,4 +1,4 @@
-<?php
+<?php namespace namespace Phailgorithm\PhactoryLib;
 
 use Core\Cache;
 use Illuminate\Support\Collection;

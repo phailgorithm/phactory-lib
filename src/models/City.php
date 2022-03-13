@@ -1,6 +1,6 @@
 <?php namespace Phailgorithm\PhactoryLib\Model;
 
-use Model;
+use Phailgorithm\PhactoryLib\Model;
 
 use Carbon\Carbon;
 use Illuminate\Support\Collection;
