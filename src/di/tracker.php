@@ -42,7 +42,7 @@ return function () : Redis {
                 'env' => ENV,
                 'project' => [
                     'code' => di()->has('project') ? di()->getProject() : null,
-                    'version' => di()->has('project') && !di()->get('dev') ? di()->getProjectVersion() : ENV,
+                    'version' => !di()->get('dev') ? VERSION : ENV,
                     'domain' => di()->getDomain()
                 ]
             ]);

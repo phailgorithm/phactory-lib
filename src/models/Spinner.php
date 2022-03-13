@@ -36,7 +36,6 @@ class Spinner extends Model implements Arrayable {
      }
 
     private function fetchItems() {
-        d($_ENV);
         // $cacheKey = $this->getCachePrefix() . get_called_class() . ':' . json_encode($this->filters);
         $q = "SELECT A.id, A.merge, A.token_count, A.condition, json_agg(json_build_object('id', B.id, 'content_type', B.content_type, 'content', B.content)) as data
             FROM spinner_item AS A

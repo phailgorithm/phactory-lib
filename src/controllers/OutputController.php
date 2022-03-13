@@ -183,7 +183,7 @@ class OutputController extends Controller {
 
         if ($this->di->has('project')) {
             $this->response->setHeader('X-Project', $this->di->getProject());
-            $this->response->setHeader('X-ProjectVersion', $this->di->getProjectVersion());
+            $this->response->setHeader('X-ProjectVersion', VERSION);
         }
 
         $this->actionReturn = $dispatcher->getReturnedValue();
