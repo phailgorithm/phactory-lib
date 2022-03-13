@@ -1,4 +1,4 @@
-<?php namespace namespace Phailgorithm\PhactoryLib;
+<?php namespace Phailgorithm\PhactoryLib;
 
 use Illuminate\Support\Collection;
 
