@@ -8,5 +8,5 @@ return function () {
         conf()->cache->enabled = false;
     }
 
-    return Core\Cache::getInstance($_ENV['WEB_REDIS_SHARED_CACHE_ADDRESS']);
+    return Phailgorithm\PhactoryLib\Model\Cache::getInstance($_ENV['WEB_REDIS_SHARED_CACHE_ADDRESS']);
 };
