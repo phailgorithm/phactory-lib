@@ -18,6 +18,7 @@
     },
     "autoload": {
         "psr-4": {
+            "Phailgorithm\\PhactoryLib\\Exception\\": "src/exceptions/",
             "Phailgorithm\\PhactoryLib\\Controller\\": "src/controllers/",
             "Phailgorithm\\PhactoryLib\\Model\\": "src/models/",
             "Phailgorithm\\PhactoryLib\\": "src/abstracts/"

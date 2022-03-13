@@ -1,9 +1,9 @@
-<?php namespace Core;
+<?php namespace Phailgorithm\PhactoryLib\Model;
 
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Arrayable;
 
-use Model;
+use Phailgorithm\PhactoryLib\Model;
 
 class Comment extends Collection implements Arrayable {
 

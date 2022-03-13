@@ -1,7 +1,6 @@
-<?php namespace Core;
+<?php namespace Phailgorithm\PhactoryLib\Model;
 
-use Model;
-use Requests;
+use Phailgorithm\PhactoryLib\Exception\Model;
 use Localcache;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Arrayable;
@@ -48,7 +47,7 @@ class Spinner extends Model implements Arrayable {
         $item = static::cachedRawQuery('spinner:'.implode(':',$this->id), $this->ttl ,$q, [ $this->id[1] ])->first();
 
         if (!$item) {
-            throw new \Core\Exception\NotFound("Item not found: " . $this->id );
+            throw new \Phailgorithm\PhactoryLib\Exception\NotFound("Item not found: " . $this->id );
         }
 
         foreach (['merge', 'token_count', 'condition'] as $k) {

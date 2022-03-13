@@ -1,6 +1,6 @@
-<?php namespace Core;
+<?php namespace \Phailgorithm\PhactoryLib\Model;
 
-use Model;
+use Phailgorithm\PhactoryLib\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Arrayable;
 
@@ -28,7 +28,7 @@ class StaticContent extends Model implements Arrayable {
                 $slug, $website ])->first();
 
         if (!$item) {
-            throw new \Core\Exception\NotFound("Content not found: ${website} / ${slug}");
+            throw new \Phailgorithm\PhactoryLib\Exception\NotFound("Content not found: ${website} / ${slug}");
         }
         $Parsedown = new \Parsedown();
         $this->content = htmlspecialchars_decode($Parsedown->text($item['content'] ));;

@@ -1,6 +1,6 @@
-<?php namespace Core;
+<?php namespace \Phailgorithm\PhactoryLib\Model;
 
-use Model;
+use Phailgorithm\PhactoryLib\Model;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Arrayable;
 

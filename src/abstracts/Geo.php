@@ -1,4 +1,4 @@
-<?php namespace Core;
+<?php namespace Phailgorithm\PhactoryLib\Model;
 
 abstract class Geo extends \Model {
 

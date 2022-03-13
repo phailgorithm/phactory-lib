@@ -1,7 +1,6 @@
-<?php namespace Core;
+<?php namespace Phailgorithm\PhactoryLib\Model;
 
-use Exception\NotFoundException;
-
+use Phailgorithm\PhactoryLib\Exception\NotFound;
 use Phalcon\Mvc\Model\Resultset\Simple as Resultset;
 use Illuminate\Support\Collection;
 
@@ -24,7 +23,7 @@ class Redirect extends \Model {
             [ $url ]
         );
         if (!$data->count()) {
-            throw new \Core\Exception\NotFound;
+            throw new NotFound;
         }
         return new self( $data->first()->toArray() );
     }

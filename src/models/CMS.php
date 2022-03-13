@@ -1,6 +1,5 @@
-<?php namespace Core;
+<?php namespace Phailgorithm\PhactoryLib\Model;
 
-use Requests;
 use Localcache;
 use Illuminate\Support\Collection;
 use Illuminate\Contracts\Support\Arrayable;
