@@ -18,7 +18,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Phailgorithm\\PhactoryLib\\Controller": "src/controllers/"
+            "Phailgorithm\\PhactoryLib\\Controller\\": "src/controllers/"
         },
         "files": [
             "src/library/helpers.php"
