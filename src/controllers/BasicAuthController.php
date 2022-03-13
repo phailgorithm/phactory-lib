@@ -1,4 +1,4 @@
-<?php namespace Phailgorithm\PhactoryLib;
+<?php namespace Phailgorithm\PhactoryLib\Controller;
 
 class BasicAuthController extends \Phailgorithm\PhactoryLib\Core\OutputController {
 
