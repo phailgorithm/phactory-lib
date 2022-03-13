@@ -1,6 +1,6 @@
 <?php namespace Phailgorithm\PhactoryLib;
 
-use Core\Cache;
+use Model\Cache;
 use Illuminate\Support\Collection;
 use \Illuminate\Contracts\Support\Arrayable;
 
@@ -84,7 +84,7 @@ abstract class Model implements Arrayable {
                 $cacheKey ?: md5(serialize([$query,$parameters]))
         );
 
-        return \Core\Cache::get(
+        return Cache::get(
             $cacheKey,
             $ttl ?? static::getCacheTtl(),
             function() use ($query, $parameters, $returnModel) {
