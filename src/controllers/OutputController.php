@@ -214,7 +214,7 @@ class OutputController extends Controller {
                 'project' => array_merge([
                     'code' => $this->di->has('project') ? $this->di->getProject() : null,
                     'version' => $this->di->has('project') && !di()->get('dev') ? $this->di->getProjectVersion() : ENV
-                ],$this->di->has('config') ? $this->di->getConfig()->project->toArray() : []),
+                ],$this->di->has('config') ? $this->di->getConfig()->toArray() : []),
 
                 'website' => [
                     'envs' => $GLOBALS['DOMAIN_ENVS'],
@@ -246,8 +246,8 @@ class OutputController extends Controller {
                 });
             }
 
-            debug('cache-metrics',Cache::getMetrics());
-            debug('localcache-metrics',Localcache::getMetrics());
+//            debug('cache-metrics',Cache::getMetrics());
+//            debug('localcache-metrics',Localcache::getMetrics());
 
             if ($this->view->isDisabled()) {
 

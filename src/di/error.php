@@ -28,11 +28,10 @@ else {
             ]);
 
         } else if ($args[0] instanceof Throwable) {
-d($args);
-            if (class_exists(sprintf('%s\\Phailgorithm\\PhactoryLib\\Core\\ErrorController', di()->getProject()))) {
-                di()->getDispatcher()->setNameSpaceName( sprintf('%s\\Phailgorithm\\PhactoryLib\\Core', di()->getProject()) );
+            if (class_exists(sprintf('%s\\Phailgorithm\\PhactoryLib\\Controller\\ErrorController', di()->getProject()))) {
+                di()->getDispatcher()->setNameSpaceName( sprintf('%s\\Phailgorithm\\PhactoryLib\\Controller', di()->getProject()) );
             } else {
-                di()->getDispatcher()->setNameSpaceName( 'Phailgorithm\\PhactoryLib\\Core' );
+                di()->getDispatcher()->setNameSpaceName( 'Phailgorithm\\PhactoryLib\\Controller' );
             }
 
             di()->getDispatcher()->setControllerName( 'Error');

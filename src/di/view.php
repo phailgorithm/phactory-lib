@@ -6,7 +6,7 @@ return function () {
     $view = new Phalcon\Mvc\View();
     $view->setDI($this);
 
-    $folder = $this->has('project') ? sprintf('%s/%s/twig/', PHACTORY_PATH, $this->getProject()) : '/base/frontend/twig';
+    $folder = $this->has('project') ? sprintf('%s/twig/', APP_PATH) : '/base/frontend/twig';
     $view->setViewsDir($folder);
     $view->setMainView(null);
 
