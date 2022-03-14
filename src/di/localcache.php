@@ -8,5 +8,5 @@ return function () {
     //     conf()->cache->enabled = false;
     // }
 
-    return Core\Localcache::getInstance($_ENV['WEB_REDIS_LOCAL_CACHE_ADDRESS']);
+    return Phailgorithm\PhactoryLib\Model\Localcache::getInstance($_ENV['WEB_REDIS_LOCAL_CACHE_ADDRESS']);
 };
