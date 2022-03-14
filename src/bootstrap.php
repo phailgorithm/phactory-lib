@@ -25,7 +25,6 @@ $preEnv = array (
     'db',
     'httphost',
     'project',
-    'projectVersion',
     'domain',
 );
 
