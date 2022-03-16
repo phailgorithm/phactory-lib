@@ -213,7 +213,7 @@ class OutputController extends Controller {
                 // 'config'  => $this->di->has('config') ? $this->di->getConfig()->toArray() : [],
                 'project' => array_merge([
                     'code' => $this->di->has('project') ? $this->di->getProject() : null,
-                    'version' => $this->di->has('project') && !di()->get('dev') ? $this->di->getProjectVersion() : ENV
+                    'version' => $this->di->has('project') && !di()->get('dev') ? VERSION : ENV
                 ],$this->di->has('config') ? $this->di->getConfig()->project->toArray() : []),
 
                 'website' => [
