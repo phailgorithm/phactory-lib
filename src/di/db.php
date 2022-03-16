@@ -15,7 +15,7 @@ return function () {
         'port'     => $config['port'],
         'username' => $config['user'],
         'password' => $config['pass'],
-        // 'dbname'   => $config->database->dbname,
+        'dbname'   => trim($config['path'],'/'),
         // 'charset'  => $config->database->charset
         'options' => [
             PDO::ERRMODE_EXCEPTION => true
